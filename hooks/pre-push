@@ -9,7 +9,7 @@ fi
 echo "pre-push: Checkstyle OK."
 # Blocks the push if Unit Tests finds violations.
 echo "pre-push: running Unit Tests..."
-if ! java CalculatorControllerTest:check; then
+if ! java src/main/test/com/polteq/service/CalculatorControllerTest:check; then
     echo "pre-push: Unit Test failures found - push aborted."
     exit 1
 fi
