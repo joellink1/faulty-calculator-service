@@ -4,10 +4,12 @@ jobs:
   compile:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v7
       - name: maven compile
         run: mvn compile
   test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v7
       - name: maven test
         run: mvn test

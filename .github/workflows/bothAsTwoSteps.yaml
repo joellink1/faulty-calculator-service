@@ -4,7 +4,8 @@ jobs:
   compileAndTest:
     runs-on: ubuntu-latest
     steps:
-     - name: maven compile
-       run: mvn compile
-     - name: maven test
-       run: mvn test
+      - uses: actions/checkout@v7
+      - name: maven compile
+        run: mvn compile
+      - name: maven test
+        run: mvn test
