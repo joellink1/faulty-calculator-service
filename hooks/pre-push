@@ -7,3 +7,10 @@ if ! ./mvnw -q checkstyle:check; then
     exit 1
 fi
 echo "pre-push: Checkstyle OK."
+# Blocks the push if Unit Tests finds violations.
+echo "pre-push: running Unit Tests..."
+if ! ./mvnw -q test:check; then
+    echo "pre-push: Unit Test failures found - push aborted."
+    exit 1
+fi
+echo "pre-push: Unit tests OK."
