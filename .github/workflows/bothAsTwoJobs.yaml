@@ -1,0 +1,13 @@
+name: bothAsTwoSteps
+on: workflow_dispatch
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: maven compile
+        run: mvn compile
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: maven test
+        run: mvn test
