@@ -22,7 +22,7 @@ class CalculatorControllerTest {
     void sum() throws Exception {
         mockMvc.perform(get("/sum").param("a", "2").param("b", "3"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("6.0"));
+                .andExpect(content().string("5.0"));
     }
 
     @Test
